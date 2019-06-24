@@ -14,14 +14,15 @@ public class KafkaQuarkusResource {
 
     @Inject
     @Stream("my-data-stream") Publisher<Double> prices; 
-    
+  
     @Inject
     @Stream("generated-id-name") Publisher<String> greentings;  
 
     @GET
     @Path("greentings")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.SERVER_SENT_EVENTS)
     public Publisher<String>  hello() {
+    	System.out.println("resources");
         return greentings;
     }
 

@@ -19,6 +19,7 @@ public class GreentingConverter {
     @Outgoing("generated-id-name")                          
     @Broadcast                                          
     public String process(String name) {
+    	System.out.println("converter");
         return MY_NAME_IS.concat("Fernando estrela de "+name);
     }
 
